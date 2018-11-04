@@ -32,15 +32,14 @@ export default class Contacts extends Component {
     const { contacts } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         {contacts.map(contact => (
           <Contact
-            name={contact.name}
-            email={contact.email}
-            phone={contact.phone}
+            key={contact.id} // this 'key' is required for iterable loops
+            contact={contact}
           />
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }
